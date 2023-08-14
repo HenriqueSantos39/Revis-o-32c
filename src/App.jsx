@@ -2,21 +2,22 @@ import { useState } from 'react'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+    const [usuario, setUsuario] = useState('')
 
+    function hadleUsuario(evento) {
+        setUsuario.log(evento.target.value)
+    }
+    console.log(usuario)
   return (
    <>
     <header>
         <h1>Login</h1>
     </header>
-
     <main>
       <form action="">
         <div>
-          <label htmlFor="usuario">
-            Usuário
-          </label>
-          <input type="text" id="usuario" placeholder="Digite seu usuario" />
+          <label htmlFor="usuario">Usuário</label>
+          <input type="text" id="usuario" placeholder="Digite seu usuario" onChange={hadleUsuario}/>
         </div>
         <div>
           <label htmlFor="senha">Senha</label>
